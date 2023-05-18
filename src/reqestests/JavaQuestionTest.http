@@ -1,0 +1,29 @@
+# Тестовые запросы для JavaQuestionController
+
+GET http://localhost:8080/exam/java/add?question=Java question 3&answer=Java answer 3
+###
+
+GET http://localhost:8080/exam/java/add?question=Java question 4&answer=Java answer 4
+###
+
+GET http://localhost:8080/exam/java/add?question=Java question 5&answer=Java answer 5
+###
+
+GET http://localhost:8080/exam/java/add?question=Java question 6&answer=Java answer 6
+###
+
+GET http://localhost:8080/exam/java/add?question=Java question 7&answer=Java answer 7
+###
+
+
+
+GET http://localhost:8080/exam/java/remove?question=Java question 3&answer=Java answer 3
+###
+
+GET http://localhost:8080/exam/java/remove?question=Java question 5&answer=Java answer 5
+###
+
+
+
+GET http://localhost:8080/exam/java
+###
