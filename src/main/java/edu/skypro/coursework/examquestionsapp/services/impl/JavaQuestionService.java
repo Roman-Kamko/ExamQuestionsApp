@@ -2,9 +2,10 @@ package edu.skypro.coursework.examquestionsapp.services.impl;
 
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.services.QuestionService;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
-
+@Service
 public class JavaQuestionService implements QuestionService {
     private static Set<Question> questionSet = new HashSet<>();
     @Override
