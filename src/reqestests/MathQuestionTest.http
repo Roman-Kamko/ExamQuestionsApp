@@ -1,0 +1,37 @@
+# Тестовые запросы для MathQuestionController
+
+# Добавление Math вопросов
+GET http://localhost:8080/exam/math/add?question=Math question 4&answer=Math answer 4
+###
+
+GET http://localhost:8080/exam/math/add?question=Math question 5&answer=Math answer 5
+###
+
+GET http://localhost:8080/exam/math/add?question=Math question 6&answer=Math answer 6
+###
+
+GET http://localhost:8080/exam/math/add?question=Math question 7&answer=Math answer 7
+###
+
+GET http://localhost:8080/exam/math/add?question=Math question 8&answer=Math answer 8
+###
+
+
+# Удаление Math вопросов
+GET http://localhost:8080/exam/math/remove?question=Math question 3&answer=Math answer 3
+###
+
+GET http://localhost:8080/exam/math/remove?question=Math question 5&answer=Math answer 5
+###
+
+
+# Поиск Math вопросов
+GET http://localhost:8080/exam/math/find?question=Math question 3&answer=Math answer 3
+###
+
+GET http://localhost:8080/exam/math/find?question=Math question 4&answer=Math answer 4
+###
+
+# Весь список Math вопросов
+GET http://localhost:8080/exam/math
+###
