@@ -9,7 +9,5 @@ public interface QuestionRepository {
 
     Question remove(Question question);
 
-    Question find(Question question);
-
     Collection<Question> getAll();
 }

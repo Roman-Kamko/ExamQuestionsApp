@@ -35,14 +35,6 @@ public class MathQuestionRepository implements QuestionRepository {
     }
 
     @Override
-    public Question find(Question question) {
-        return mathQuestion.stream()
-                .filter(question::equals)
-                .findFirst()
-                .orElseThrow(InvalidInputException::new);
-    }
-
-    @Override
     public Collection<Question> getAll() {
         return mathQuestion;
     }

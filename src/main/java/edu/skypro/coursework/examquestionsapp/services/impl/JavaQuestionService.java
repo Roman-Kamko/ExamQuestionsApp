@@ -21,13 +21,14 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Question add(String question, String answer) {
-        return repository.add(question, answer);
+        return add(repository.add(question, answer));
     }
 
     @Override
-    public Question find(Question question) {
-        return repository.find(question);
+    public Question add(Question question) {
+        return question;
     }
+    // не нужный метод)
 
     @Override
     public Question remove(Question question) {

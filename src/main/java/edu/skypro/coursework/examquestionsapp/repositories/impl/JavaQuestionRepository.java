@@ -35,14 +35,6 @@ public class JavaQuestionRepository implements QuestionRepository {
     }
 
     @Override
-    public Question find(Question question) {
-        return javaQuestion.stream()
-                .filter(question::equals)
-                .findFirst()
-                .orElseThrow(InvalidInputException::new);
-    }
-
-    @Override
     public Collection<Question> getAll() {
         return javaQuestion;
     }

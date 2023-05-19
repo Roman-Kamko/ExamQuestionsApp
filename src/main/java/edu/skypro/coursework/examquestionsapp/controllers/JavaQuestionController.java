@@ -36,10 +36,4 @@ public class JavaQuestionController {
                                        @RequestParam String answer) {
         return service.remove(new Question(question, answer));
     }
-
-    @GetMapping("/find")
-    public Question findJavaQuestion(@RequestParam String question,
-                                     @RequestParam String answer) {
-        return service.find(new Question(question, answer));
-    }
 }
