@@ -9,5 +9,5 @@ GET http://localhost:8080/exam/get/4
 GET http://localhost:8080/exam/get/7
 ###
 
-GET http://localhost:8080/exam/get/100
+GET http://localhost:8080/exam/get/404
 ###

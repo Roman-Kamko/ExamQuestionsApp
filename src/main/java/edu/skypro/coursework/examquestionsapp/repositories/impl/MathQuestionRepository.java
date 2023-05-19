@@ -1,6 +1,5 @@
 package edu.skypro.coursework.examquestionsapp.repositories.impl;
 
-import edu.skypro.coursework.examquestionsapp.exceptions.InvalidInputException;
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.repositories.QuestionRepository;
 import jakarta.annotation.PostConstruct;

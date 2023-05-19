@@ -25,13 +25,6 @@ GET http://localhost:8080/exam/math/remove?question=Math question 5&answer=Math 
 ###
 
 
-# Поиск Math вопросов
-GET http://localhost:8080/exam/math/find?question=Math question 3&answer=Math answer 3
-###
-
-GET http://localhost:8080/exam/math/find?question=Math question 4&answer=Math answer 4
-###
-
 # Весь список Math вопросов
 GET http://localhost:8080/exam/math
 ###

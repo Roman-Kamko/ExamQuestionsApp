@@ -44,7 +44,7 @@ public class JavaQuestionService implements QuestionService {
     public Question getRandomQuestion() {
         Random random = new Random();
         return repository.getAll().stream()
-                .skip(random.nextInt((repository.getAll().size()) - 1))
+                .skip(random.nextInt(repository.getAll().size()))
                 .findFirst()
                 .orElseThrow(InvalidInputException::new);
     }

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -42,10 +43,42 @@ public class MathQuestionService implements QuestionService {
 
     @Override
     public Question getRandomQuestion() {
+//        return generateQuestion();
         Random random = new Random();
         return repository.getAll().stream()
-                .skip(random.nextInt((repository.getAll().size()) - 1))
+                .skip(random.nextInt(repository.getAll().size()))
                 .findFirst()
                 .orElseThrow(InvalidInputException::new);
+
     }
+
+//    private Question generateQuestion() {
+//        Random random = new Random();
+//        List<Integer> integers = List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+//        List<Character> operations = List.of('+', '-', '*', '/');
+//
+//        int num1 = integers.get(random.nextInt(integers.size()));
+//        int num2 = integers.get(random.nextInt(integers.size()));
+//        char operation = operations.get(random.nextInt(operations.size()));
+//
+//        String answer = null;
+//        String question = num1 + " " + operation + " " + num2;
+//
+//        if (divisionByZero(operation, num2)) {
+//            answer = "Делить на ноль нельзя";
+//        } else {
+//            switch (operation) {
+//                case '+' -> answer = String.valueOf(num1 + num2);
+//                case '-' -> answer = String.valueOf(num1 - num2);
+//                case '*' -> answer = String.valueOf(num1 * num2);
+//                case '/' -> answer = String.valueOf(num1 / num2);
+//            }
+//        }
+//
+//        return new Question(question, answer);
+//    }
+//
+//    private Boolean divisionByZero(char operation, int num2) {
+//        return operation == '/' && num2 == 0;
+//    }
 }

@@ -9,19 +9,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
-    private final QuestionService javaQuestionService;
-    private final QuestionService mathQuestionService;
+//    private final QuestionService javaQuestionService;
+//    private final QuestionService mathQuestionService;
 
-    public ExaminerServiceImpl(@Qualifier("javaQuestionService")
-                               QuestionService javaQuestionService,
-                               @Qualifier("mathQuestionService")
-                               QuestionService mathQuestionService) {
-        this.javaQuestionService = javaQuestionService;
-        this.mathQuestionService = mathQuestionService;
+    private final List<QuestionService> services;
+
+    public ExaminerServiceImpl(List<QuestionService> services) {
+        this.services = services;
     }
 
     @Override
@@ -29,8 +28,11 @@ public class ExaminerServiceImpl implements ExaminerService {
 
         Collection<Question> examQuestionSet = new HashSet<>();
 
-        int totalCapacity = javaQuestionService.getAll().size() +
-                mathQuestionService.getAll().size();
+
+
+        int totalCapacity = services.stream()
+                .mapToInt(element -> element.getAll().size())
+                .sum();
 
         if (amount > totalCapacity) {
             throw new InvalidInputException();
@@ -51,10 +53,17 @@ public class ExaminerServiceImpl implements ExaminerService {
     }
 
     private Question javaQuestion() {
-        return javaQuestionService.getRandomQuestion();
+        return services.stream()
+                .map(QuestionService::getRandomQuestion)
+                .findFirst()
+                .get();
     }
 
     private Question mathQuestion() {
-        return mathQuestionService.getRandomQuestion();
+        return services.stream()
+                .map(QuestionService::getRandomQuestion)
+                .skip(1)
+                .findFirst()
+                .get();
     }
 }
