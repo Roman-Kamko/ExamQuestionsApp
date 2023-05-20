@@ -1,6 +1,7 @@
 package edu.skypro.coursework.examquestionsapp.services.impl;
 
 import edu.skypro.coursework.examquestionsapp.exceptions.InvalidInputException;
+import edu.skypro.coursework.examquestionsapp.exceptions.QuestionNotFoundException;
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.services.ExaminerService;
 import edu.skypro.coursework.examquestionsapp.services.QuestionService;
@@ -28,8 +29,6 @@ public class ExaminerServiceImpl implements ExaminerService {
 
         Collection<Question> examQuestionSet = new HashSet<>();
 
-
-
         int totalCapacity = services.stream()
                 .mapToInt(element -> element.getAll().size())
                 .sum();
@@ -37,6 +36,7 @@ public class ExaminerServiceImpl implements ExaminerService {
         if (amount > totalCapacity) {
             throw new InvalidInputException();
         }
+
         while (examQuestionSet.size() < amount) {
             examQuestionSet.add(randomQuestion());
         }
@@ -56,7 +56,7 @@ public class ExaminerServiceImpl implements ExaminerService {
         return services.stream()
                 .map(QuestionService::getRandomQuestion)
                 .findFirst()
-                .get();
+                .orElseThrow(QuestionNotFoundException::new);
     }
 
     private Question mathQuestion() {
@@ -64,6 +64,6 @@ public class ExaminerServiceImpl implements ExaminerService {
                 .map(QuestionService::getRandomQuestion)
                 .skip(1)
                 .findFirst()
-                .get();
+                .orElseThrow(QuestionNotFoundException::new);
     }
 }

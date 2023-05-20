@@ -1,6 +1,7 @@
 package edu.skypro.coursework.examquestionsapp.services.impl;
 
 import edu.skypro.coursework.examquestionsapp.exceptions.InvalidInputException;
+import edu.skypro.coursework.examquestionsapp.exceptions.QuestionNotFoundException;
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.repositories.QuestionRepository;
 import edu.skypro.coursework.examquestionsapp.services.QuestionService;
@@ -48,7 +49,7 @@ public class MathQuestionService implements QuestionService {
         return repository.getAll().stream()
                 .skip(random.nextInt(repository.getAll().size()))
                 .findFirst()
-                .orElseThrow(InvalidInputException::new);
+                .orElseThrow(QuestionNotFoundException::new);
 
     }
 
