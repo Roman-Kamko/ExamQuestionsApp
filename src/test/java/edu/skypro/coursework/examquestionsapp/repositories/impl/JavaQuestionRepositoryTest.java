@@ -24,8 +24,8 @@ class JavaQuestionRepositoryTest {
 
     @Test
     void addSomeQuestionTest() {
-        out.getAll().clear();
         // нужно очистить коллекцию от элементов добавленных методом beforeEach()
+        out.getAll().clear();
         out.addSomeQuestion();
         assertThat(out.getAll()).containsExactlyInAnyOrder(
                 new Question("Java question 1", "Java answer 1"),

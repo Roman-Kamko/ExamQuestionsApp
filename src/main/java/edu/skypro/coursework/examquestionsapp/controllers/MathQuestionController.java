@@ -13,7 +13,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/math")
 public class MathQuestionController {
-    private QuestionService service;
+    private final QuestionService service;
 
     public MathQuestionController(@Qualifier("mathQuestionService")
                                   QuestionService service) {

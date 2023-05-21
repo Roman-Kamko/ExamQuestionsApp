@@ -23,17 +23,16 @@ public class MathQuestionService implements QuestionService {
 
     @Override
     public Question add(String question, String answer) {
-        return add(repository.add(question, answer));
+        return repository.add(question, answer);
     }
-
-    @Override
-    public Question add(Question question) {
-        return question;
-    }
-    // не нужный метод)
 
     @Override
     public Question remove(Question question) {
+
+        if (!repository.getAll().contains(question)) {
+            throw new QuestionNotFoundException();
+        }
+
         return repository.remove(question);
     }
 

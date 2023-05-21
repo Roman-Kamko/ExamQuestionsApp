@@ -13,7 +13,7 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/java")
 public class JavaQuestionController {
-    private QuestionService service;
+    private final QuestionService service;
 
     public JavaQuestionController(@Qualifier("javaQuestionService")
                                   QuestionService service) {
