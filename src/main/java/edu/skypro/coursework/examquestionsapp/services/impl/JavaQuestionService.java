@@ -1,6 +1,5 @@
 package edu.skypro.coursework.examquestionsapp.services.impl;
 
-import edu.skypro.coursework.examquestionsapp.exceptions.InvalidInputException;
 import edu.skypro.coursework.examquestionsapp.exceptions.QuestionNotFoundException;
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.repositories.QuestionRepository;

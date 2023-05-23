@@ -1,6 +1,5 @@
 package edu.skypro.coursework.examquestionsapp.services.impl;
 
-import edu.skypro.coursework.examquestionsapp.exceptions.InvalidInputException;
 import edu.skypro.coursework.examquestionsapp.exceptions.QuestionNotFoundException;
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.repositories.QuestionRepository;
@@ -9,7 +8,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Random;
 
 @Service

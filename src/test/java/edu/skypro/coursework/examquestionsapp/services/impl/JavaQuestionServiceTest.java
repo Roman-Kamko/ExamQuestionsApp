@@ -3,7 +3,6 @@ package edu.skypro.coursework.examquestionsapp.services.impl;
 import edu.skypro.coursework.examquestionsapp.exceptions.QuestionNotFoundException;
 import edu.skypro.coursework.examquestionsapp.model.Question;
 import edu.skypro.coursework.examquestionsapp.repositories.QuestionRepository;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
