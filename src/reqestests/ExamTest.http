@@ -1,0 +1,13 @@
+# Тестовые запросы для ExamController
+
+GET http://localhost:8080/exam/get/2
+###
+
+GET http://localhost:8080/exam/get/4
+###
+
+GET http://localhost:8080/exam/get/7
+###
+
+GET http://localhost:8080/exam/get/404
+###
